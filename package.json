@@ -1,0 +1,14 @@
+{
+  "name": "hustlefm",
+  "version": "1.0.0",
+  "description": "Share HustleFM Player",
+  "dependencies": {
+    "gulp": "",
+    "gulp-uglify": "",
+    "gulp-rigger": "",
+    "gulp-rename": "",
+    "rimraf": ""
+  },
+  "author": "RHDev",
+  "license": "ISC"
+}
