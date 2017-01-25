@@ -1,9 +1,9 @@
-Audio.live = function (element) {
+Audio.live = function (element, properties) {
     var self = this;
 
+    properties = properties || {};
+
     var options = {
-        width: 300,
-        height: 300,
         src: [{
             url: 'http://93.188.164.219:8090/ices',
             type: 'audio/mp3'
@@ -12,10 +12,15 @@ Audio.live = function (element) {
             type: 'audio/ogg'
         }],
         properties: {
-            controls: true,
-            preload: true
+            controls: properties.controls || true,
+            preload: properties.preload || true,
         }
     };
+    if (properties.width === 'auto' || isNaN(+properties.width)) {
+        options.width = 'auto';
+    } else {
+        options.width = +properties.width + 'px';
+    }
 
     self.create = function () {
         var audio = _d.createElement('audio');
@@ -37,6 +42,12 @@ Audio.live = function (element) {
         }
 
         var parent = _d.querySelectorAll(element)[0];
-        parent.appendChild(audio);
+        // parent.appendChild(audio);
+
+        parent.style.width = options.width;
+        parent.style.height = (parent.clientWidth / 2) + 'px';
+
+        parent.style.backgroundImage = 'url(https://github.com/octav47/rhapi/raw/master/img/backgrund.png)';
+        parent.style.backgroundSize = 'cover';
     };
 };

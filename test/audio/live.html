@@ -14,7 +14,9 @@
 </div>
 
 <script>
-    var livePlayer = new RadioHustleApi.audio.live('#test');
+    var livePlayer = new RadioHustleApi.audio.live('#test', {
+        width: 300
+    });
     livePlayer.create();
 </script>
 </body>
