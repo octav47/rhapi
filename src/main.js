@@ -1,6 +1,9 @@
 (function (_w, _d) {
     var CHIEF = {};
 
+    // init
+    //= init.js
+
     // audio
     //= audio/audio.js
 
